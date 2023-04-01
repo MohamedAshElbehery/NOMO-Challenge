@@ -17,6 +17,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+//calculating property finance at Two years fixed rate
 WebUI.callTestCase(findTestCase('Test Cases/Modules/Property Finance/calculatePropertyFinanceModule'),
 	 [('propertyValue'):propertyValue, ('rentalIncome'):rentalIncome, ('downPayment'):downPayment,
 		 ('expectedFinanceAmount'):expectedFinanceAmount, ('expectedMonthlyCost'):expectedMonthlyCost,('isFiveYears'):isFiveYears])

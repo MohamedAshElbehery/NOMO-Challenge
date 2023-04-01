@@ -17,6 +17,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+//asserting that the right error message is shown when providing an exceeding down payment and 0 finance and monthly amount
 WebUI.callTestCase(findTestCase('Test Cases/Modules/Property Finance/calculatePropertyFinanceModule'),
 	 [ ('propertyValue'):propertyValue,
 	   ('rentalIncome'):rentalIncome,

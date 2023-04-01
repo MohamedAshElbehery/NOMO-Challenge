@@ -21,31 +21,37 @@ WebUI.openBrowser('https://www.nomobank.com/rental-property-finance')
 
 WebUI.maximizeWindow()
 
+//accepting cookies
 WebUI.waitForElementPresent(findTestObject('Property Finance/acceptCookies_btn'), GlobalVariable.globalTimeOut)
 
 WebUI.click(findTestObject('Property Finance/acceptCookies_btn'))
 
+//switching to the iframe containing the calculator
 WebUI.scrollToElement(findTestObject('Property Finance/applyForPropertyFin_h4'), GlobalVariable.globalTimeOut)
 
 WebUI.switchToFrame(findTestObject('Property Finance/propertyFinanceCalculator_iframe'), GlobalVariable.globalTimeOut)
 
 WebUI.waitForElementVisible(findTestObject('Property Finance/estimateProperty_txt'), GlobalVariable.globalTimeOut)
 
+//deleting the default value to avoid overlapping with new value
 WebUI.sendKeys(findTestObject('Property Finance/estimateProperty_txt'), Keys.chord(Keys.SHIFT, Keys.ARROW_UP))
 
 WebUI.sendKeys(findTestObject('Property Finance/estimateProperty_txt'), Keys.chord(Keys.BACK_SPACE))
 
+//adding the property value passed from test case call
 WebUI.setText(findTestObject('Property Finance/estimateProperty_txt'), propertyValue)
 
 WebUI.waitForElementVisible(findTestObject('Property Finance/estimateRentalIncome_txt'), GlobalVariable.globalTimeOut)
 
+//adding rental income passed from test case call
 WebUI.setText(findTestObject('Property Finance/estimateRentalIncome_txt'), rentalIncome)
 
 WebUI.waitForElementVisible(findTestObject('Property Finance/downPayment_txt'), GlobalVariable.globalTimeOut)
 
+//adding down payment passed from test case call
 WebUI.setText(findTestObject('Property Finance/downPayment_txt'), downPayment)
 
-
+//if condition for the happy scenario and it's default value is equal to true
 if(isHappyScenarioFlow == true) {
 	
 	WebUI.waitForElementClickable(findTestObject('Property Finance/fixedRate_select'), GlobalVariable.globalTimeOut)
@@ -54,6 +60,7 @@ if(isHappyScenarioFlow == true) {
 	
 	WebUI.scrollToElement(findTestObject('Property Finance/downPayment_txt'), GlobalVariable.globalTimeOut)
 
+//selecting 5 years option istead of 2 and default value is false
 if(isFiveYears == true) {
 	
 	WebUI.click(findTestObject('Property Finance/fiveYearFixedRate_li'))
@@ -65,6 +72,7 @@ if(isFiveYears == true) {
 	
 }else {
 	
+	//asserting that the error message is equal the error message passed from test case call
 	WebUI.waitForElementVisible(findTestObject('Property Finance/downPaymentAlert_div'), GlobalVariable.globalTimeOut)
 	
 	actualAlertMessage = WebUI.getText(findTestObject('Property Finance/downPaymentAlert_div'))
@@ -73,10 +81,12 @@ if(isFiveYears == true) {
 	
 }
 
+//getting the finance amount and monthly amount and asserting that they are equal to the expected value
 WebUI.scrollToElement(findTestObject('Property Finance/financeAmount_h2'), GlobalVariable.globalTimeOut)
 
 outputFinanceAmount = WebUI.getText(findTestObject('Property Finance/financeAmount_h2'))
 
+//cleaning the string from unwanted characters using stringSplitAtSpace module
 actualFinanceAmount = WebUI.callTestCase(findTestCase('Modules/String Manipulation/stringSplitAtSpace'), [('desiredString'):outputFinanceAmount])
 
 assert expectedFinanceAmount == actualFinanceAmount
