@@ -39,4 +39,6 @@ ssh : git@github.com:MohamedAshElbehery/nomo-challenge.git
 
 You will find the videos attached to the repo under the folder Videos
 
+I couldn't attach the katalon version file I will send it via mail
+
 ##talk to you soon
