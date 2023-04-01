@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>stringSplitAtSpace</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>f1f73fed-1aa9-4d04-891d-4e2c3d18ffb9</testCaseGuid>
+   <variableLinks>
+      <testDataLinkId></testDataLinkId>
+      <type>DEFAULT</type>
+      <value></value>
+      <variableId>bb187f0a-bbbd-4648-976d-c66910115f42</variableId>
+   </variableLinks>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>bb187f0a-bbbd-4648-976d-c66910115f42</id>
+      <masked>false</masked>
+      <name>desiredString</name>
+   </variable>
+</TestCaseEntity>

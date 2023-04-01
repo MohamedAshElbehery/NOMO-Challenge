@@ -17,11 +17,12 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.openBrowser('https://www.nomobank.com/rental-property-finance')
-
-WebUI.waitForElementPresent(findTestObject('Object Repository/cookie'), 15)
-
-WebUI.click(findTestObject('Object Repository/cookie'))
-
-WebUI.switchToFrame(findTestObject('Object Repository/iframe'), 15)
+WebUI.callTestCase(findTestCase('Test Cases/Modules/Property Finance/calculatePropertyFinanceModule'),
+	 [ ('propertyValue'):propertyValue,
+	   ('rentalIncome'):rentalIncome,
+	   ('downPayment'):downPayment,
+	   ('expectedFinanceAmount'):expectedFinanceAmount,
+	   ('expectedMonthlyCost'):expectedMonthlyCost,
+	   ('isHappyScenarioFlow'):isHappyScenarioFlow,
+	   ('expectedAlertMessage'):expectedAlertMessage])
 

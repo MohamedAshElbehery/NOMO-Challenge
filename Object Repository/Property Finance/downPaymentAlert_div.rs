@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>iframe</name>
+   <name>downPaymentAlert_div</name>
    <tag></tag>
-   <elementGuidId>20665b94-7366-4b7d-9ebc-84c47585c09e</elementGuidId>
+   <elementGuidId>6f86d776-8f8e-47d2-8e88-f04af642d620</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//iframe[@class=&quot;mc-embedded_Iframe__27PR_&quot;]</value>
+         <value>//div[@class=&quot;mc-form_ValidationMsgError__JNryE&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>
