@@ -37,4 +37,6 @@ I used git commands like clone, commit, and push
 http link to repo: https://github.com/MohamedAshElbehery/nomo-challenge.git
 ssh : git@github.com:MohamedAshElbehery/nomo-challenge.git
 
+You will find the videos attached to the repo under the folder Videos
+
 ##talk to you soon
